@@ -1,0 +1,47 @@
+#!/bin/bash
+y=$1
+x=$(curl wttr.in/?format=%m)
+if [ $x == 🌑 ]; then
+  echo 🌕
+  echo "8quart" &> ~/.cache/moon
+  echo "🌕" &> ~/.cache/moone
+  exit
+elif [ $x == 🌕 ]; then
+  echo 🌑
+  echo "4quart" &> ~/.cache/moon
+  echo "🌑" &> ~/.cache/moone
+  exit
+elif [ $x == 🌒 ]; then
+  echo 🌖
+  echo "7quart" &> ~/.cache/moon
+  echo "🌖" &> ~/.cache/moone
+  exit
+elif [ $x == 🌘 ]; then 
+  echo 🌔
+  echo "1quart" &> ~/.cache/moon
+  echo "🌔" &> ~/.cache/moone
+  exit
+elif [ $x == 🌓 ]; then
+  echo 🌗
+  echo "6quart" &> ~/.cache/moon
+  echo "🌗" &> ~/.cache/moone
+  exit
+elif [ $x == 🌗 ]; then
+  echo 🌓
+  echo "2quart" &> ~/.cache/moon
+  echo "🌓" &> ~/.cache/moone
+  exit
+elif [ $x == 🌔 ]; then
+  echo 🌘
+  echo "5quart" &> ~/.cache/moon
+  echo "🌘" &> ~/.cache/moone
+  exit
+elif [ $x == 🌖 ]; then
+  echo 🌒
+  echo "3quart" &> ~/.cache/moon
+  echo "🌒" &> ~/.cache/moone
+  exit
+else
+  cat ~/.cache/moone
+  exit
+fi

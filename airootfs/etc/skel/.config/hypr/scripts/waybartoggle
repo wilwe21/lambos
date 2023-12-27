@@ -1,0 +1,7 @@
+#!/bin/bash
+if ps -C ags > /dev/null
+then
+    killall ags
+else
+   ags
+fi

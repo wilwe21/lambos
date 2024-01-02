@@ -37,13 +37,13 @@ export default {
             })
         },
         gtk: {
-            theme: Option('', {
+            theme: Option('Catppuccin-Macchiato-Standard-Mauve-Dark', {
                 'scss': 'exclude',
 
             })
         },
         gtkIcons: {
-            theme: Option('', {
+            theme: Option('Catppuccin-Macchiato', {
                 'scss': 'exclude',
 
             })
@@ -51,28 +51,28 @@ export default {
     },
 
     color: {
-        red: Option('#c01c28', { 'scss': 'red' }),
-        green: Option('#2ec27e', { 'scss': 'green' }),
-        yellow: Option('#f5c211', { 'scss': 'yellow' }),
+        red: Option('#F38BA8', { 'scss': 'red' }),
+        green: Option('#A6E3A1', { 'scss': 'green' }),
+        yellow: Option('#F9E2AF', { 'scss': 'yellow' }),
         moon: Option('#F9E2AF', { 'scss': 'moon' }),
-        blue: Option('#3584e4', { 'scss': 'blue' }),
-        temp: Option('#c01c28', { 'scss': 'temp' }),
-        download: Option('#2ec27e', { 'scss': 'download' }),
-        cpucolor: Option('#f5c211', { 'scss': 'cpucolor' }),
-        upload: Option('#3584e4', { 'scss': 'upload' }),
-        magenta: Option('#813d9c', { 'scss': 'magenta' }),
-        teal: Option('#99c1f1', { 'scss': 'teal' }),
-        orange: Option('#e66100', { 'scss': 'orange' }),
-        playcolor: Option('#e66100', { 'scss': 'playcolor' }),
+        blue: Option('#89B4FA', { 'scss': 'blue' }),
+        temp: Option('#F38BA8', { 'scss': 'temp' }),
+        download: Option('#A6E3A1', { 'scss': 'download' }),
+        cpucolor: Option('#F9E2AF', { 'scss': 'cpucolor' }),
+        upload: Option('#89B4FA', { 'scss': 'upload' }),
+        magenta: Option('#CBA6F7', { 'scss': 'magenta' }),
+        teal: Option('#94E2D5', { 'scss': 'teal' }),
+        orange: Option('#FAB387', { 'scss': 'orange' }),
+        playcolor: Option('#FAB387', { 'scss': 'playcolor' }),
     },
 
     theme: {
-        name: Option(themes[0].name, {
+        name: Option('Dark', {
             'category': 'exclude',
             'note': 'Name to show as active in quicktoggles',
         }),
 
-        icon: Option(themes[0].icon, {
+        icon: Option('/home/lamb/.config/ags/icons/cat.png', {
             'category': 'exclude',
             'note': 'Icon to show as active in quicktoggles',
             'scssFormat': v => `"${v}"`,
@@ -86,27 +86,27 @@ export default {
             'title': 'Color Scheme',
             'scss': 'color-scheme',
         }),
-        bg: Option('#1E1E1E', {
+        bg: Option('#181825', {
             'title': 'Background Color',
             'scss': 'bg-color',
         }),
-        fg: Option('#deddda', {
+        fg: Option('#CDD6F4', {
             'title': 'Foreground Color',
             'scss': 'fg-color',
         }),
 
         accent: {
-            accent: Option('$blue', {
+            accent: Option('#CBA6F7', {
                 'category': 'Theme',
                 'title': 'Accent Color',
                 'scss': 'accent',
             }),
-            fg: Option('#141414', {
+            fg: Option('$bg-color', {
                 'category': 'Theme',
                 'title': 'Accent Foreground Color',
                 'scss': 'accent-fg',
             }),
-            gradient: Option('to right, $accent, lighten($accent, 6%)', {
+            gradient: Option('to right, $accent, lighten(#D2AC31, 20%)', {
                 'category': 'Theme',
                 'title': 'Accent Linear Gradient',
                 'scss': 'accent-gradient',
@@ -129,22 +129,22 @@ export default {
     },
 
     border: {
-        color: Option('$fg-color', {
+        color: Option('#0000FB', {
             'category': 'Border',
             'title': 'Border Color',
             'scss': '_border-color',
         }),
-        opacity: Option(97, {
+        opacity: Option(100, {
             'category': 'Border',
             'title': 'Border Opacity',
             'unit': '',
         }),
-        width: Option(0, {
+        width: Option(2, {
             'category': 'Border',
             'title': 'Border Width',
             'scss': 'border-width',
         }),
-        barcolor: Option('#ffffff', {
+        barcolor: Option('$accent', {
             'category': 'Border',
             'title': 'Bar Border color',
             'scss': 'bar-border-color',
@@ -191,12 +191,12 @@ export default {
 
     applauncher: {
         width: Option(500),
-        height: Option(500),
-        icon_size: Option(52),
+        height: Option(400),
+        icon_size: Option(32),
         descvisible: Option(false),
         labvisible: Option(true),
         icovisible: Option(true),
-        label: Option('I use arch btw', {
+        label: Option('LambOS Welcome', {
             'scssFormat': s => `${s}`,
         }),
     },
@@ -211,12 +211,12 @@ export default {
             'type': 'enum',
         }),
         flat_buttons: Option(true, { 'scss': 'bar-flat-buttons' }),
-        separators: Option(true),
-        icon: Option(themes[0].options['bar.icon'], {
+        separators: Option(false),
+        icon: Option('/home/lamb/.config/ags/icons/cat.png', {
                 'scssFormat': v => `"${v}"`,
                 'type': 'img',
             }),
-        decorator1: Option(themes[0].options['bar.decorator1'], {
+        decorator1: Option('/home/lamb/.config/ags/icons/null.png', {
                 'scssFormat': v => `"${v}"`,
                 'type': 'img',
             }),
@@ -276,9 +276,6 @@ export default {
             'scss': 'moonsize',
         }),
     },
-    menu: {
-        visible: Option(false),
-    },
     sound: {
         sound: Option(' ', {
             'scssFormat': v => `"${v}"`,
@@ -300,18 +297,6 @@ export default {
             'scssFormat': v => `"${v}"`,
         }),
     },
-    game: {
-        visible: Option(false),
-        anchor: Option('top', {
-            'scssFormat': v => `"${v}"`,
-        }),
-        ml: Option('0', {
-            'scssFormat': v => `"${v}"`,
-        }),
-        mt: Option('0', {
-            'scssFormat': v => `"${v}"`,
-        }),
-    },
 
     battery: {
         show_percentage: Option(true, {
@@ -330,7 +315,7 @@ export default {
     desktop: {
         wallpaper: {
             fg: Option('#fff', { 'scss': 'wallpaper-fg' }),
-            img: Option('/home/wilwe/.hyprland.conf/screens/wallpapers/black.png', {
+            img: Option('/home/lamb/.config/ags/wallpapers/main.png', {
                 'scssFormat': v => `"${v}"`,
                 'type': 'img',
             }),
